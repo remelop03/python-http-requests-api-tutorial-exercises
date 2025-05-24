@@ -1,4 +1,8 @@
 import requests
-
-response = requests.get("https://assets.breatheco.de/apis/fake/sample/time.php")
-print(response.text)
+url = "https://assets.breatheco.de/apis/fake/sample/time.php"
+response = requests.get(url)
+dict = response.json() 
+hour = dict["hours"]
+min  = dict["minutes"]
+sec  = dict["seconds"]
+print(f"Current time: {hour} hrs {min} min and {sec} sec")
